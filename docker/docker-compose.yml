@@ -1,0 +1,20 @@
+version: "3"
+services:
+  protoc-go:
+    build:
+      context: ../
+      dockerfile: ./docker/go/Dockerfile
+    environment:
+      - TZ=Asia/Tokyo
+    working_dir: /proto
+    volumes:
+      - ../proto:/proto
+  protoc-python:
+    build:
+      context: ../
+      dockerfile: ./docker/python/Dockerfile
+    environment:
+      - TZ=Asia/Tokyo
+    working_dir: /proto
+    volumes:
+      - ../proto:/proto

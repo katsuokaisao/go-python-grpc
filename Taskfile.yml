@@ -1,0 +1,29 @@
+version: '3'
+
+tasks:
+  build-protoc:
+    cmds:
+      - docker-compose -f docker/docker-compose.yml build --no-cache
+
+  proto-gen-go:
+    cmds:
+      - >
+        docker-compose -f docker/docker-compose.yml run --rm protoc bash -c "mkdir -p ./go &&
+        protoc-go
+        --go_out=./go
+        --go_opt=paths=source_relative
+        --go-grpc_out=./go
+        --go-grpc_opt=paths=source_relative
+        --go-grpc_opt=require_unimplemented_servers=false
+        *.proto"
+
+  proto-gen-python:
+    cmds:
+      - >
+        docker-compose -f docker/docker-compose.yml run --rm protoc-python bash -c "mkdir -p ./python &&
+        python -m grpc_tools.protoc
+        --proto_path=.
+        --python_out=./python
+        --pyi_out=./python
+        --grpc_python_out=./python
+        *.proto"
