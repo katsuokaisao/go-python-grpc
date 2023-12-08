@@ -19,9 +19,9 @@ tasks:
       - >
         docker-compose -f docker/docker-compose.yml run --rm protoc-go bash -c "
         protoc
-        --go_out=./src/go/grpc
+        --go_out=./src/go
         --go_opt=paths=source_relative
-        --go-grpc_out=./src/go/grpc
+        --go-grpc_out=./src/go
         --go-grpc_opt=paths=source_relative
         --go-grpc_opt=require_unimplemented_servers=false
         ./proto/*.proto"
@@ -31,7 +31,7 @@ tasks:
         docker-compose -f docker/docker-compose.yml run --rm protoc-python bash -c "
         python -m grpc_tools.protoc
         --proto_path=.
-        --python_out=./src/python/grpc
-        --pyi_out=./src/python/grpc
-        --grpc_python_out=./src/python/grpc
+        --python_out=./src/python
+        --pyi_out=./src/python
+        --grpc_python_out=./src/python
         ./proto/*.proto"

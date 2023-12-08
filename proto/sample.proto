@@ -4,7 +4,7 @@ syntax = "proto3";
 package PinPon;
 
 // 変換後のgoファイルを出力するディレクトリかつパッケージ名
-option go_package = "github.com/katsuokaisao/proto-gen-sample/grpc/proto";
+option go_package = "github.com/katsuokaisao/proto-gen-sample/proto";
 
 service PinPonService {
     rpc send (pinPonRequest) returns (pinPonResponse);

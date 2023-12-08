@@ -14,14 +14,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12proto/sample.proto\x12\x06PinPon\"\x1d\n\rpinPonRequest\x12\x0c\n\x04word\x18\x01 \x01(\t\"\x1e\n\x0epinPonResponse\x12\x0c\n\x04word\x18\x01 \x01(\t2F\n\rPinPonService\x12\x35\n\x04send\x12\x15.PinPon.pinPonRequest\x1a\x16.PinPon.pinPonResponseB5Z3github.com/katsuokaisao/proto-gen-sample/grpc/protob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12proto/sample.proto\x12\x06PinPon\"\x1d\n\rpinPonRequest\x12\x0c\n\x04word\x18\x01 \x01(\t\"\x1e\n\x0epinPonResponse\x12\x0c\n\x04word\x18\x01 \x01(\t2F\n\rPinPonService\x12\x35\n\x04send\x12\x15.PinPon.pinPonRequest\x1a\x16.PinPon.pinPonResponseB0Z.github.com/katsuokaisao/proto-gen-sample/protob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proto.sample_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
-  _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/katsuokaisao/proto-gen-sample/grpc/proto'
+  _globals['DESCRIPTOR']._serialized_options = b'Z.github.com/katsuokaisao/proto-gen-sample/proto'
   _globals['_PINPONREQUEST']._serialized_start=30
   _globals['_PINPONREQUEST']._serialized_end=59
   _globals['_PINPONRESPONSE']._serialized_start=61
