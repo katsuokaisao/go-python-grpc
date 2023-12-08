@@ -6,7 +6,7 @@
 
 // プロトファイルの名前空間を定義
 
-package grpc
+package proto
 
 import (
 	context "context"
