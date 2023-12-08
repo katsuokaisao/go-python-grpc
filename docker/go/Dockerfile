@@ -1,4 +1,4 @@
-FROM golang:1.18
+FROM golang:1.20
 
 WORKDIR /root
 
@@ -17,8 +17,14 @@ RUN set -ex; \
 ENV \
   PATH=/root/protobuf/bin:$PATH
 
-WORKDIR /home
+WORKDIR /home/src/go/
 
 RUN set -ex; \
   go install google.golang.org/protobuf/cmd/protoc-gen-go@latest; \
   go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+
+COPY ./src/go/go.mod ./src/go/go.sum ./
+
+RUN go mod tidy
+
+CMD ["go", "run", "main.go"]
