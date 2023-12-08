@@ -4,16 +4,16 @@ syntax = "proto3";
 package PinPon;
 
 // 変換後のgoファイルを出力するディレクトリかつパッケージ名
-option go_package = "./go-protocol-buffer";
-
-message pinPonRequest {
-    string words = 1; // 数字はフィールド番号(タグ)
-};
-
-message pinPonResponse {
-    string words = 1; // 数字はフィールド番号(タグ)
-};
+option go_package = "github.com/katsuokaisao/proto-gen-sample/grpc";
 
 service PinPonService {
     rpc send (pinPonRequest) returns (pinPonResponse);
 }
+
+message pinPonRequest {
+    string word = 1;
+};
+
+message pinPonResponse {
+    string word = 1;
+};

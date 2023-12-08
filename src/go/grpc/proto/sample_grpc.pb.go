@@ -2,11 +2,11 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.25.1
-// source: sample.proto
+// source: proto/sample.proto
 
 // プロトファイルの名前空間を定義
 
-package go_protocol_buffer
+package grpc
 
 import (
 	context "context"
@@ -105,5 +105,5 @@ var PinPonService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "sample.proto",
+	Metadata: "proto/sample.proto",
 }

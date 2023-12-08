@@ -6,15 +6,17 @@ services:
       dockerfile: ./docker/go/Dockerfile
     environment:
       - TZ=Asia/Tokyo
-    working_dir: /proto
+    working_dir: /home
     volumes:
-      - ../proto:/proto
+      - ..:/home
+    tty: true
   protoc-python:
     build:
       context: ../
       dockerfile: ./docker/python/Dockerfile
     environment:
       - TZ=Asia/Tokyo
-    working_dir: /proto
+    working_dir: /home
     volumes:
-      - ../proto:/proto
+      - ..:/home
+    tty: true
