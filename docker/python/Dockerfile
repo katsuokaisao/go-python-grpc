@@ -1,8 +1,13 @@
-FROM python:3.8-slim
+FROM python:3.12
 
 # 今回はpoetryなどは面倒なので使わない
 RUN pip install --upgrade pip \
-    && pip install grpcio \
-    && pip install grpcio-tools
+    && pip install pipenv
 
-WORKDIR /home
+WORKDIR /home/src/python
+
+COPY src/python/Pipfile .
+
+RUN pipenv install
+
+CMD ["pipenv", "run", "python", "main.py"]

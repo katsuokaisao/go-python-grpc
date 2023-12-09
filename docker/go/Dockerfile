@@ -9,7 +9,7 @@ ENV \
 RUN set -ex; \
   # protoc
   apt-get update; \
-  apt-get -qq install unzip; \
+  apt-get -qq install unzip net-tools; \
   rm -rf /var/lib/apt/lists/*; \
   wget https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-aarch_64.zip -O protobuf.zip; \
   unzip protobuf.zip -d protobuf;

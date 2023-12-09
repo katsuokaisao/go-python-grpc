@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	port := 8080
+	port := 1234
 	listener, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
 		panic(err)
@@ -28,7 +28,9 @@ func main() {
 
 	go func() {
 		log.Printf("start gRPC server port: %v", port)
-		s.Serve(listener)
+		if err := s.Serve(listener); err != nil {
+			panic(err)
+		}
 	}()
 
 	quit := make(chan os.Signal, 1)
@@ -48,5 +50,5 @@ type PinPonSever struct {
 
 func (s *PinPonSever) Send(ctx context.Context, req *pb.PinPonRequest) (*pb.PinPonResponse, error) {
 	fmt.Printf("receive %s\n", req.GetWord())
-	return &pb.PinPonResponse{Word: "Pon"}, nil
+	return &pb.PinPonResponse{Word: "pong"}, nil
 }

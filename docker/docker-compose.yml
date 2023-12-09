@@ -10,6 +10,8 @@ services:
     volumes:
       - ..:/home
     tty: true
+    ports:
+      - 1234:1234
   protoc-python:
     build:
       context: ../
@@ -20,3 +22,5 @@ services:
     volumes:
       - ..:/home
     tty: true
+    depends_on:
+      - protoc-go
