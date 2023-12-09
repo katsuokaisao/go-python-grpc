@@ -6,7 +6,6 @@ services:
       dockerfile: ./docker/go/Dockerfile
     environment:
       - TZ=Asia/Tokyo
-    working_dir: /home/src/go
     volumes:
       - ..:/home
     tty: true
@@ -18,7 +17,6 @@ services:
       dockerfile: ./docker/python/Dockerfile
     environment:
       - TZ=Asia/Tokyo
-    working_dir: /home/src/python
     volumes:
       - ..:/home
     tty: true

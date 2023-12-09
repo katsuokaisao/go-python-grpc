@@ -1,6 +1,6 @@
 import grpc
-from proto.sample_pb2 import pinPonRequest
-from proto.sample_pb2_grpc import PinPonServiceStub
+from proto.pinpon_pb2 import pinPonRequest
+from proto.pinpon_pb2_grpc import PinPonServiceStub
 
 import sys
 import pprint

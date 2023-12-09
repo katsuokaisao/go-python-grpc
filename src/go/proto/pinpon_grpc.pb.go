@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.25.1
-// source: proto/sample.proto
+// source: proto/pinpon.proto
 
 // プロトファイルの名前空間を定義
 
@@ -105,5 +105,5 @@ var PinPonService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/sample.proto",
+	Metadata: "proto/pinpon.proto",
 }

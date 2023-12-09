@@ -27,4 +27,6 @@ COPY ./src/go/go.mod ./src/go/go.sum ./
 
 RUN go mod tidy
 
-CMD ["go", "run", "main.go"]
+WORKDIR /home/
+
+CMD ["bash", "-c", "cd src/go && go run main.go"]

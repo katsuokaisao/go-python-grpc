@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from proto import sample_pb2 as proto_dot_sample__pb2
+from proto import pinpon_pb2 as proto_dot_pinpon__pb2
 
 
 class PinPonServiceStub(object):
@@ -16,8 +16,8 @@ class PinPonServiceStub(object):
         """
         self.send = channel.unary_unary(
                 '/PinPon.PinPonService/send',
-                request_serializer=proto_dot_sample__pb2.pinPonRequest.SerializeToString,
-                response_deserializer=proto_dot_sample__pb2.pinPonResponse.FromString,
+                request_serializer=proto_dot_pinpon__pb2.pinPonRequest.SerializeToString,
+                response_deserializer=proto_dot_pinpon__pb2.pinPonResponse.FromString,
                 )
 
 
@@ -35,8 +35,8 @@ def add_PinPonServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'send': grpc.unary_unary_rpc_method_handler(
                     servicer.send,
-                    request_deserializer=proto_dot_sample__pb2.pinPonRequest.FromString,
-                    response_serializer=proto_dot_sample__pb2.pinPonResponse.SerializeToString,
+                    request_deserializer=proto_dot_pinpon__pb2.pinPonRequest.FromString,
+                    response_serializer=proto_dot_pinpon__pb2.pinPonResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -60,7 +60,7 @@ class PinPonService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/PinPon.PinPonService/send',
-            proto_dot_sample__pb2.pinPonRequest.SerializeToString,
-            proto_dot_sample__pb2.pinPonResponse.FromString,
+            proto_dot_pinpon__pb2.pinPonRequest.SerializeToString,
+            proto_dot_pinpon__pb2.pinPonResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
